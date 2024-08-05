@@ -49,9 +49,10 @@ public class PostServiceImpl extends ServiceImpl implements IPostService {
     public Post updatePost(CreatePostDTO postDTO, UUID postId) {
         try {
             if(!postRepository.existsById(postId)) throw new NotFoundException("The post with the provided Id is not found");
-            post = Mapper.getPostFromDTO(postDTO);
+            post = postRepository.findById(postId).get();
             post.setTitle(postDTO.getTitle());
             post.setContent(postDTO.getContent());
+            post.setImageUrl(postDTO.getImageUrl());
             return this.postRepository.save(post);
         }catch (Exception exception){
             ExceptionsUtils.handleServiceExceptions(exception);
@@ -64,8 +65,10 @@ public class PostServiceImpl extends ServiceImpl implements IPostService {
     public void deletePost(UUID postId) {
         try {
             if(!postRepository.existsById(postId)) throw new NotFoundException("The post with provided Id is not found");
-            this.postRepository.deleteById(postId);
+            post = postRepository.findById(postId).get();
+            this.postRepository.delete(post);
         }catch (Exception exception){
+            exception.printStackTrace();
             ExceptionsUtils.handleServiceExceptions(exception);
         }
     }
@@ -91,7 +94,19 @@ public class PostServiceImpl extends ServiceImpl implements IPostService {
     public List<Post> getAll(){
         try {
             posts =  this.postRepository.findAll(sort);
+            user = userService.getLoggedInUser();
             Collections.sort(posts);
+            for(Post post : posts){
+                if(post.getAuthor() == null){
+                    post.setOwner(true);
+                    continue;
+                }
+                if( post.getAuthor().equals(user)){
+                    post.setOwner(true);
+                }else{
+                    post.setOwner(true);
+                }
+            }
             return posts;
         }catch (Exception exception){
             ExceptionsUtils.handleServiceExceptions(exception);

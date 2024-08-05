@@ -51,7 +51,9 @@ export const FeaturedPosts: React.FC<any> = ({ posts }) => {
               </h2>
               <p className="text-sm">{post.content}</p>
               <div className="flex gap-3">
-                <p>{post.author.email}</p>
+                <p>
+                  {post.author != null ? post.author.userName : "No author"}
+                </p>
                 <p>{format(new Date(post.dateTime), "yyyy MMMM ddd")}</p>
               </div>
             </div>

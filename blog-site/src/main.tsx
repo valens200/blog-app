@@ -13,6 +13,8 @@ import { PostDetail } from "./pages/post-detail";
 import { AuthProvider } from "./hooks/useAuth";
 import { Toaster } from "react-hot-toast";
 import { createTheme, MantineProvider } from "@mantine/core";
+import { ConfirmModal } from "./components/modals/ConfirmModal";
+
 const theme = createTheme({});
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <MantineProvider theme={theme}>
@@ -30,6 +32,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <Route path="*" element={<Login />} />
           </Routes>
           <Toaster />
+          <ConfirmModal />
         </AuthProvider>
       </Router>
     </React.StrictMode>

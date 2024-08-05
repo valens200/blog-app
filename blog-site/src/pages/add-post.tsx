@@ -10,6 +10,8 @@ import { Footer } from "@/components/Footer";
 export const AddPost: React.FC = () => {
   const navigate = useNavigate();
 
+  const post: any = JSON.parse(localStorage.getItem("post")!);
+
   return (
     <MainLayout>
       <main className="w-full">
@@ -30,7 +32,7 @@ export const AddPost: React.FC = () => {
             </div>
           </div>
           <main className="space-y-4 px-4">
-            <CreatePostForm />
+            <CreatePostForm post={post} />
           </main>
         </div>
         <div className="flex flex-col justify-end bg-black fixed bottom-0 w-full">

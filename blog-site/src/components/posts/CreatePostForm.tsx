@@ -6,12 +6,13 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "../ui/button";
 import { authApi } from "@/utils/api/constants";
-import { title } from "process";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import { getErrorFromResponse } from "@/utils/functions/function";
 
-interface Props {}
+interface Props {
+  post: any;
+}
 
 // Form values types
 interface InitialFormValues {
@@ -33,32 +34,38 @@ const CreatePostSchema = Yup.object().shape({
   content: Yup.string().required("Required"),
 });
 
-export const CreatePostForm: React.FC<Props> = () => {
+export const CreatePostForm: React.FC<Props> = ({ post }) => {
   const [coverImageUrl, setCoverImageUrl] = useState("");
   const navigate = useNavigate();
+  const buttonContent = post == null ? "Create post" : "Update post";
 
   return (
     <Formik<InitialFormValues>
       initialValues={{
-        content: "",
+        content: post == null ? "" : post.content,
         description: "",
-        title: "",
-        coverImage: undefined,
+        title: post == null ? "" : post.title,
+        coverImage: post == null ? "" : post.imageUrl,
       }}
       validationSchema={CreatePostSchema}
       onSubmit={async (values, { setSubmitting, setFieldError }) => {
-        if (values.coverImage) {
-          // First upload the cover image to cloudinary
-          const data = new FormData();
-          data.append("file", values.coverImage);
-          data.append(
-            "upload_preset",
-            import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET
-          );
-          data.append("cloud_name", import.meta.env.VITE_CLOUDINARY_CLOUD_NAME);
-          data.append("folder", "Blog-Cover-Images");
+        if (!values.coverImage && post == null) {
+          setFieldError("coverImage", "You must upload a cover image");
+          setSubmitting(false);
+        }
+        // First upload the cover image to cloudinary
+        const data = new FormData();
+        data.append("file", values.coverImage!);
+        data.append(
+          "upload_preset",
+          import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET
+        );
+        data.append("cloud_name", import.meta.env.VITE_CLOUDINARY_CLOUD_NAME);
+        data.append("folder", "Blog-Cover-Images");
 
-          try {
+        try {
+          // Uploading the image to cloudinary to prevent unnecessary memory consumption on the server
+          if (post == null) {
             const response = await fetch(
               `https://api.cloudinary.com/v1_1/${
                 import.meta.env.VITE_CLOUDINARY_CLOUD_NAME
@@ -70,22 +77,41 @@ export const CreatePostForm: React.FC<Props> = () => {
             );
             const res = await response.json();
             setCoverImageUrl(res.secure_url);
-            const createPostResponse = await authApi.post("/posts/create", {
-              title: values.title,
-              content: values.content,
-              imageUrl: coverImageUrl,
-            });
-            console.log(createPostResponse);
-            navigate(-1);
-            toast.success("The post was created successfully");
-          } catch (error) {
-            toast.error(getErrorFromResponse(error));
-          } finally {
-            setSubmitting(false);
           }
-        } else {
-          setFieldError("coverImage", "You must upload a cover image");
+          let createPostResponse;
+          const body = {
+            title: values.title,
+            content: values.content,
+            imageUrl: coverImageUrl,
+          };
+          if (post == null) {
+            createPostResponse = await authApi.post(`/posts/create`, body);
+          } else {
+            createPostResponse = await authApi.put(
+              `/posts/update/${post.id}`,
+              body
+            );
+          }
+
+          console.log(createPostResponse);
+          // Moving bacl to the previous page
+          navigate(-1);
+          let message: string;
+          // Providing the feedback to the user based on the action ( created or updated )
+          if (post == null) {
+            message = "The post was created successfully";
+          } else {
+            message = "The post was update successfully";
+          }
+          toast.success(message);
+        } catch (error) {
+          toast.error(getErrorFromResponse(error));
+        } finally {
           setSubmitting(false);
+          //  Removing the post from the local storage is available
+          if (post != null) {
+            localStorage.removeItem("post");
+          }
         }
       }}
     >
@@ -166,7 +192,7 @@ export const CreatePostForm: React.FC<Props> = () => {
                 type="submit"
                 disabled={isSubmitting}
               >
-                Create post
+                {buttonContent}
               </Button>
             </div>
           </Form>
