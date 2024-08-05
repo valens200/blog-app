@@ -21,6 +21,7 @@ public class Post extends InitiatorAudit  implements Comparable{
     private UUID id;
 
     private String title;
+    private String imageUrl;
 
     @Column(columnDefinition = "TEXT")
     private String content;
@@ -33,9 +34,9 @@ public class Post extends InitiatorAudit  implements Comparable{
     @Override
     public int compareTo(Object o) {
         Post post = (Post) o;
-        if(this.getDateTime().compareTo(post.getDateTime()) != 0){
-            return this.getDateTime().compareTo(post.getDateTime());
-        }
-        return this.getTitle().compareTo(post.getTitle());
+//        if(this.getDateTime().compareTo(post.getDateTime()) != 0){
+            return -this.getDateTime().compareTo(post.getDateTime());
+//        }
+//        return this.getTitle().compareTo(post.getTitle());
     }
 }

@@ -38,7 +38,11 @@ export function IndexPage() {
           <Padding className="py-8 grid gap-28 md:grid-cols-2 grid-cols-1 justify-items-center bg-gradient-to-tr from-sky-100 via-white to-slate-100">
             <Link to={`/p/${posts[0].id}`} className="flex flex-col gap-4">
               <img
-                src="https://github.blog/wp-content/uploads/2024/07/AI-DarkMode-2-1.png?w=1200"
+                src={
+                  posts[0].imageUrl
+                    ? posts[0].imageUrl
+                    : "https://github.blog/wp-content/uploads/2024/07/AI-DarkMode-2-1.png?w=1200"
+                }
                 alt="Image"
                 className="sm:max-w-[600px] w-full max-h-[500px] rounded-xl"
               />
@@ -63,11 +67,11 @@ export function IndexPage() {
             </div>
           </Padding>
         )}
-
+        {/* 
         <Padding className="md:py-24 py-6 grid gap-28 md:grid-cols-2 grid-cols-1 justify-items-center ">
           <LatestPosts posts={posts} />
           <PopularPosts posts={posts} />
-        </Padding>
+        </Padding> */}
         <Footer />
       </main>
     </MainLayout>

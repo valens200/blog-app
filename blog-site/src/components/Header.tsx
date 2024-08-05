@@ -31,19 +31,19 @@ export const Header: React.FC<HeaderProps> = () => {
       className={`${
         scrolled
           ? "backdrop-blur-lg py-2 border-b border-b-border fixed"
-          : "bg-primary py-8"
-      } text-foreground flex flex-col gap-6 top-0 w-full`}
+          : "bg-primary py-4"
+      } text-foreground flex flex-col gap-4 top-0 w-full`}
     >
       <div className="flex w-full justify-between">
-        <Link
-          to={`/`}
+        <button
+          onClick={() => navigate(-1)}
           className={`${
             !scrolled ? "text-primary-foreground" : "text-slate-950"
           } text-2xl font-bold`}
         >
           <span className="text-3xl text-muted-foreground font-normal">/</span>
           Blog
-        </Link>
+        </button>
         {!loggedIn && (
           <div className="sm:flex gap-5 items-center text-muted-foreground hidden">
             <Button
@@ -58,20 +58,22 @@ export const Header: React.FC<HeaderProps> = () => {
         )}
         {loggedIn && (
           <div className="">
-            <div className="flex items-center px-5">
-              <div className="flex-shrink-0">
-                <img
-                  className="h-10 w-10 rounded-full"
-                  src={staticUser.traineeImageUrl}
-                  alt=""
-                />
-              </div>
-              <div className="ml-3">
-                <div className="text-base font-medium leading-none text-white">
-                  {staticUser.name}
+            <div className="flex items-center space-x-3 px-5">
+              <div className="flex flex-row items-center">
+                <div className="flex-shrink-0">
+                  <img
+                    className="h-10 w-10 rounded-full"
+                    src={staticUser.traineeImageUrl}
+                    alt=""
+                  />
                 </div>
-                <div className="text-sm font-medium leading-none text-gray-400">
-                  {staticUser.email}
+                <div className="ml-3">
+                  <div className="text-base font-medium leading-none text-white">
+                    {staticUser.name}
+                  </div>
+                  <div className="text-sm font-medium leading-none text-gray-400">
+                    {staticUser.email}
+                  </div>
                 </div>
               </div>
               <button
