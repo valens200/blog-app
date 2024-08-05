@@ -14,9 +14,11 @@ export const Header: React.FC<HeaderProps> = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [loggedIn, setLoggedIn] = useState(true);
   const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("user")!);
   const LogOut = async () => {
     try {
       localStorage.removeItem("token");
+      localStorage.removeItem("user");
       navigate("/");
     } catch (error) {
       console.log(error);
@@ -44,7 +46,7 @@ export const Header: React.FC<HeaderProps> = () => {
           <span className="text-3xl text-muted-foreground font-normal">/</span>
           Blog
         </button>
-        {!loggedIn && (
+        {user == null && (
           <div className="sm:flex gap-5 items-center text-muted-foreground hidden">
             <Button
               variant={`outline`}
@@ -56,7 +58,7 @@ export const Header: React.FC<HeaderProps> = () => {
             <Button onClick={() => navigate("/login")}>Sign in</Button>
           </div>
         )}
-        {loggedIn && (
+        {user != null && (
           <div className="">
             <div className="flex items-center space-x-3 px-5">
               <div className="flex flex-row items-center">
@@ -69,10 +71,10 @@ export const Header: React.FC<HeaderProps> = () => {
                 </div>
                 <div className="ml-3">
                   <div className="text-base font-medium leading-none text-white">
-                    {staticUser.name}
+                    {user.email}
                   </div>
                   <div className="text-sm font-medium leading-none text-gray-400">
-                    {staticUser.email}
+                    {user.userName}
                   </div>
                 </div>
               </div>

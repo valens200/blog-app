@@ -3,7 +3,7 @@ import { Header } from "@/components/Header";
 import { MainLayout } from "@/components/layouts/MainLayout";
 import { confirmModal } from "@/components/modals/ConfirmModal";
 import { Button } from "@/components/ui/button";
-import { authApi } from "@/utils/api/constants";
+import { authApi, images } from "@/utils/api/constants";
 import { getErrorFromResponse } from "@/utils/functions/function";
 import { format } from "date-fns";
 import { ArrowLeft, Delete, Edit } from "lucide-react";
@@ -98,7 +98,7 @@ export const PostDetail: React.FC = () => {
                 product roadmaps.
               </p>
               <img
-                src={data.imageUrl == null ? "" : data.imageUrl}
+                src={images.image1}
                 alt="Image"
                 className="rounded-xl w-full"
               />

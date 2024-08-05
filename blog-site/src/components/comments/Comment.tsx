@@ -1,24 +1,34 @@
 import { useMemo, useState } from "react";
 import { Edit, Trash } from "lucide-react";
 import { confirmModal } from "../modals/ConfirmModal";
+import { useNavigate } from "react-router-dom";
+import { authApi } from "@/utils/api/constants";
+import toast from "react-hot-toast";
+import { getErrorFromResponse } from "@/utils/functions/function";
+import { EditCommentModal } from "../modals/EditModal";
 
 interface CommentProps {
+  id: any;
   content: any;
   author: any;
   createdAt: any;
 }
 
 export const Comment: React.FC<CommentProps> = ({
-  author,
+  id,
   content,
+  author,
   createdAt,
 }) => {
-  const [showEditModal, setShowEditModal] = useState(true);
+  const [showEditModal, setShowEditModal] = useState(false);
+  const [loading, setLoading] = useState(false);
   const handleShowEditModal = () => {
     setShowEditModal(!showEditModal);
   };
   const dt = useMemo(() => new Date(createdAt), []);
   const isCreator = true;
+  console.log("Key ", id);
+
   return (
     <div className="items-center flex">
       <div className="flex gap-4 w-[80%]">
@@ -49,7 +59,20 @@ export const Comment: React.FC<CommentProps> = ({
               onClick={() => {
                 confirmModal(
                   "Are you sure you want to delete this comment?",
-                  () => {
+                  async () => {
+                    try {
+                      setLoading(true);
+                      const res = await authApi.delete(
+                        `/comments/delete/${id}`
+                      );
+                      console.log(res);
+                      toast.success("The comment was delted successfully");
+                      window.location.href = window.location.href;
+                    } catch (error) {
+                      toast.error(getErrorFromResponse(error));
+                    } finally {
+                      setLoading(false);
+                    }
                     // callback function executed when the user confirms actions
                   }
                 );
@@ -58,13 +81,14 @@ export const Comment: React.FC<CommentProps> = ({
           </>
         ) : null}
       </div>
-      {/* {showEditModal && (
+      {showEditModal && (
         <EditCommentModal
+          id={id}
           content={content}
           isOpen={showEditModal}
           onRequestClose={handleShowEditModal}
         />
-      )} */}
+      )}
     </div>
   );
 };

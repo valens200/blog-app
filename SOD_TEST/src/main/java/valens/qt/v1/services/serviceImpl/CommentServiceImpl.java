@@ -8,6 +8,7 @@ import valens.qt.v1.dtos.requests.CreateCommentDTO;
 import valens.qt.v1.exceptions.ForbiddenException;
 import valens.qt.v1.exceptions.NotFoundException;
 import valens.qt.v1.models.Comment;
+import valens.qt.v1.models.enums.EVisibility;
 import valens.qt.v1.repositories.ICommentRepository;
 import valens.qt.v1.services.ICommentService;
 import valens.qt.v1.services.IPostService;
@@ -59,7 +60,9 @@ public class CommentServiceImpl extends ServiceImpl implements ICommentService {
     public void delete(UUID commentId) {
         try {
             comment = this.getById(commentId);
-            this.commentRepository.delete(comment);
+//            This another approach of applying deletion, instead of deleting all data permanently, we can just change the visibility status
+            comment.setVisibility(EVisibility.HIDDEN);
+            commentRepository.save(comment);
         }catch (Exception exception){
             ExceptionsUtils.handleServiceExceptions(exception);
         }

@@ -15,12 +15,16 @@ export const CommentSection: React.FC<CommentSectionProps> = ({
       <CommentSectionInput postId={postId} userId="" />
       <div className="flex flex-col gap-5">
         {comments.map((comment: any) => (
-          <Comment
-            key={comment.id}
-            author={comment.author}
-            content={comment.title}
-            createdAt={comment.dateTime}
-          />
+          <>
+            {comment.visibility == "VISIBLE" && (
+              <Comment
+                id={comment.id}
+                author={comment.author}
+                content={comment.title}
+                createdAt={comment.dateTime}
+              />
+            )}
+          </>
         ))}
       </div>
     </div>

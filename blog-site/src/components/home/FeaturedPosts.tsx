@@ -1,3 +1,4 @@
+import { images } from "@/utils/api/constants";
 import { format } from "date-fns";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -37,11 +38,7 @@ export const FeaturedPosts: React.FC<any> = ({ posts }) => {
             className="flex gap-5 sm:flex-row flex-col"
           >
             <img
-              src={
-                post.imageUrl != null
-                  ? post.imageUrl
-                  : "https://github.blog/wp-content/uploads/2023/11/Security-LightMode-4.png?w=200"
-              }
+              src={images.image2}
               alt="Image"
               className="sm:max-w-[168px] w-full sm:h-36 h-52 rounded-md"
             />

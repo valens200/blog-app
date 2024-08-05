@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 import lombok.Setter;
 import valens.qt.v1.audits.InitiatorAudit;
+import valens.qt.v1.models.enums.EVisibility;
 
 import javax.persistence.*;
 import java.util.UUID;
@@ -26,6 +27,8 @@ public class Comment extends InitiatorAudit  implements Comparable{
     @JoinColumn(name = "post_id")
     @JsonIgnore
     private Post post;
+
+    private EVisibility visibility = EVisibility.VISIBLE;
 
     public Comment(){}
     public Comment(String title, String content){

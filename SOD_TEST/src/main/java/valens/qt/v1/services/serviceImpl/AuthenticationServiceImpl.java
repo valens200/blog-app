@@ -37,17 +37,15 @@ public class AuthenticationServiceImpl extends ServiceImpl implements Authentica
     private final IProfileRepository userRepository;
     private final JwtUtils jwtUtils;
     private final UserSecurityDetailsService securityDetailsService;
-    private final MailServiceImpl mailService;
     private final IUserService userService;
     private final IFileService fileService;
 
     @Autowired
     public AuthenticationServiceImpl(IProfileRepository userRepository, UserSecurityDetailsService userSecurityDetailsService,
-                                     JwtUtils jwtUtils, MailServiceImpl mailService, IUserService userService, IFileService fileService) {
+                                     JwtUtils jwtUtils, IUserService userService, IFileService fileService) {
         this.userRepository = userRepository;
         this.securityDetailsService = userSecurityDetailsService;
         this.jwtUtils = jwtUtils;
-        this.mailService = mailService;
         this.userService = userService;
         this.fileService = fileService;
     }

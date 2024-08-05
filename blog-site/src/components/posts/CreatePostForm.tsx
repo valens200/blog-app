@@ -66,23 +66,23 @@ export const CreatePostForm: React.FC<Props> = ({ post }) => {
         try {
           // Uploading the image to cloudinary to prevent unnecessary memory consumption on the server
           if (post == null) {
-            const response = await fetch(
-              `https://api.cloudinary.com/v1_1/${
-                import.meta.env.VITE_CLOUDINARY_CLOUD_NAME
-              }/image/upload`,
-              {
-                method: "POST",
-                body: data,
-              }
-            );
-            const res = await response.json();
-            setCoverImageUrl(res.secure_url);
+            // const response = await fetch(
+            //   `https://api.cloudinary.com/v1_1/${
+            //     import.meta.env.VITE_CLOUDINARY_CLOUD_NAME
+            //   }/image/upload`,
+            //   {
+            //     method: "POST",
+            //     body: data,
+            //   }
+            // );
+            // const res = await response.json();
+            // setCoverImageUrl(res.secure_url);
           }
           let createPostResponse;
           const body = {
             title: values.title,
             content: values.content,
-            imageUrl: coverImageUrl,
+            imageUrl: "",
           };
           if (post == null) {
             createPostResponse = await authApi.post(`/posts/create`, body);
@@ -93,7 +93,6 @@ export const CreatePostForm: React.FC<Props> = ({ post }) => {
             );
           }
 
-          console.log(createPostResponse);
           // Moving bacl to the previous page
           navigate(-1);
           let message: string;

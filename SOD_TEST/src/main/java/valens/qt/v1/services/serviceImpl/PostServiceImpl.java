@@ -33,6 +33,7 @@ public class PostServiceImpl extends ServiceImpl implements IPostService {
         try{
             post = Mapper.getPostFromDTO(postDTO);
             user = userService.getLoggedInUser();
+            post.setImageUrl(null);
             post.setAuthor(user);
             if(postRepository.existsByAuthorAndContentAndTitle(post.getAuthor(),post.getContent(),post.getTitle())){
                 throw new ForbiddenException("The post already exists, you can't create duplicates");
@@ -52,6 +53,7 @@ public class PostServiceImpl extends ServiceImpl implements IPostService {
             post = postRepository.findById(postId).get();
             post.setTitle(postDTO.getTitle());
             post.setContent(postDTO.getContent());
+            post.setImageUrl(null);
             post.setImageUrl(postDTO.getImageUrl());
             return this.postRepository.save(post);
         }catch (Exception exception){
@@ -61,7 +63,6 @@ public class PostServiceImpl extends ServiceImpl implements IPostService {
     }
 
     @Override
-    @Transactional
     public void deletePost(UUID postId) {
         try {
             if(!postRepository.existsById(postId)) throw new NotFoundException("The post with provided Id is not found");
