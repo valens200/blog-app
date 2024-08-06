@@ -25,9 +25,8 @@ export const Comment: React.FC<CommentProps> = ({
   const handleShowEditModal = () => {
     setShowEditModal(!showEditModal);
   };
-  const dt = useMemo(() => new Date(createdAt), []);
-  const isCreator = true;
-  console.log("Key ", id);
+  const user = JSON.parse(localStorage.getItem("user")!);
+  const isCreator = user.email == (author == null ? "" : author.email);
 
   return (
     <div className="items-center flex">
@@ -48,7 +47,7 @@ export const Comment: React.FC<CommentProps> = ({
         </div>
       </div>
       <div className="flex gap-x-4 w-[20%] justify-end items-center">
-        {isCreator ? (
+        {isCreator == true ? (
           <>
             <Edit
               className="h-5 w-5 text-orange-500"

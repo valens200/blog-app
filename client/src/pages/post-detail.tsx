@@ -53,41 +53,39 @@ export const PostDetail: React.FC = () => {
               <ArrowLeft />
               Go back
             </Button>
-            {
-              (user.email = (data.author == null ? "" : data.author.email) && (
-                <div className="flex gap-4">
-                  <Button onClick={handleEdit} className="gap-3">
-                    <Edit className="h-4 w-4" />
-                    Edit
-                  </Button>
-                  <Button
-                    variant={"destructive"}
-                    className="gap-3"
-                    onClick={() => {
-                      confirmModal(
-                        "Are you sure you want to delete this post?",
-                        async () => {
-                          try {
-                            setLoading(true);
-                            await authApi.delete(`/posts/${id}`);
-                            navigate(-1);
-                            toast.success("The post was delted successfully");
-                          } catch (error) {
-                            toast.error(getErrorFromResponse(error));
-                          } finally {
-                            setLoading(false);
-                          }
-                          // callback function executed when the user confirms actions
+            {user.email == (data == null ? "" : data.author.email) && (
+              <div className="flex gap-4">
+                <Button onClick={handleEdit} className="gap-3">
+                  <Edit className="h-4 w-4" />
+                  Edit
+                </Button>
+                <Button
+                  variant={"destructive"}
+                  className="gap-3"
+                  onClick={() => {
+                    confirmModal(
+                      "Are you sure you want to delete this post?",
+                      async () => {
+                        try {
+                          setLoading(true);
+                          await authApi.delete(`/posts/${id}`);
+                          navigate(-1);
+                          toast.success("The post was delted successfully");
+                        } catch (error) {
+                          toast.error(getErrorFromResponse(error));
+                        } finally {
+                          setLoading(false);
                         }
-                      );
-                    }}
-                  >
-                    <Delete className="h-5 w-5" />
-                    Delete
-                  </Button>
-                </div>
-              ))
-            }
+                        // callback function executed when the user confirms actions
+                      }
+                    );
+                  }}
+                >
+                  <Delete className="h-5 w-5" />
+                  Delete
+                </Button>
+              </div>
+            )}
           </div>
 
           {data != null ? (
