@@ -15,7 +15,6 @@ This is a simple blog application developed using React for the frontend and Spr
 9. [Authentication Process](#authentication-process)
 10. [User manual](#user-manual)
 11. [Project structure](#project-structure)
-    d
 
 ## Features
 
@@ -224,21 +223,53 @@ CREATE TABLE users (
 
 ## User manual
 
-### Authentication
+## Authentication
 
-#### Registration
+- Strong authentication and validation mechanism using were used to ensure data integrity and confidentiality.
+- Also sensitive data such as passswords are hashed to prevent from being visible to un authorized access.
+  -- Data validation : `yup` and `regular expressions` on the frontend plus `Javax.validation` on the backend.
+  -- Data encryption and hashing: `JWT` and `SHA-256` hashing algorithm.
+  -- Security implementation: `Spring security`
+
+#### Registration ( username , email and password)
 
 ![](https://s3.hedgedoc.org/hd1-demo/uploads/506c6a8b-deef-42c3-9744-27310b420068.png)
 
-#### Login
+#### Login ( email and password)
 
 ![](https://s3.hedgedoc.org/hd1-demo/uploads/31069e98-ce10-42ee-ba9c-344aae5cf93b.png)
 
-### Posts and comments management
+## Posts and comments management
 
-![](https://s3.hedgedoc.org/hd1-demo/uploads/639b2bf8-e09d-4d89-bc74-a976cb81c4ff.png)
-![](https://s3.hedgedoc.org/hd1-demo/uploads/9a51e62d-8668-4f9b-8b09-4cf1d7382842.png)
-![](https://s3.hedgedoc.org/hd1-demo/uploads/554523c0-a65e-4e79-88db-b9701d35dfb1.png)
+#### View comments for each test
+
+![](https://s3.hedgedoc.org/hd1-demo/uploads/4e217993-44f3-4973-b567-0c1536b36e5c.png)
+
+#### Edit comment
+
+![](https://s3.hedgedoc.org/hd1-demo/uploads/1e276efe-d467-48b5-b761-f430fe5d6565.png)
+
+![](https://s3.hedgedoc.org/hd1-demo/uploads/de485f5d-06fe-4992-b442-71a481c0e6e0.png)
+
+#### Delete comment
+
+![](https://s3.hedgedoc.org/hd1-demo/uploads/767778f0-fb52-433f-96c7-7945f1c79c4e.png)
+
+![](https://s3.hedgedoc.org/hd1-demo/uploads/ad1174e9-0f8a-43cd-9d09-f1d33b6e1cbd.png)
+
+#### Edit post
+
+![](https://s3.hedgedoc.org/hd1-demo/uploads/9c632667-e78d-46e0-b340-5b3f94d71da0.png)
+
+![](https://s3.hedgedoc.org/hd1-demo/uploads/36160107-ed36-46a1-92e4-03e686b4a8f7.png)
+
+#### Delete post
+
+![](https://s3.hedgedoc.org/hd1-demo/uploads/4f554b5e-ef48-41f2-87af-08cdc1a60103.png)
+
+![](https://s3.hedgedoc.org/hd1-demo/uploads/9c98ed6e-2e35-4acf-9cab-298d5a6b428d.png)
+
+####
 
 ---
 
