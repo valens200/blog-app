@@ -27,7 +27,7 @@ This is a simple blog application developed using React for the frontend and Spr
 
 - **Frontend**: React
 - **Backend**: Spring Boot
-- **Database**: MariaDB or PostgreSQL
+- **Database**: PostgreSQL
 
 ## Prerequisites
 
