@@ -51,9 +51,6 @@ public class HttpConfig {
                                 "/configuration/security",
                                 "/swagger-ui.html",
                                 "/webjars/**",
-                                "/api/v1/auth/verify-account",
-                                "/api/v1/auth/reset-password",
-                                "/api/v1/files/**",
                                 "/api/v1/users/create"
                         ).permitAll()
                         .anyRequest().permitAll() // Require authentication for all other requests
