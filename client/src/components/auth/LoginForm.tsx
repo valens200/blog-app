@@ -53,6 +53,8 @@ export const LoginForm: React.FC<Props> = () => {
             email: values.email,
             password: values.password,
           });
+          localStorage.removeItem("token");
+          localStorage.removeItem("user");
           localStorage.setItem("token", response.data.data.token);
           localStorage.setItem("user", JSON.stringify(response.data.data.user));
           const route: string = getUseRoute(
@@ -62,7 +64,6 @@ export const LoginForm: React.FC<Props> = () => {
           toast.success("Wellcome!! you have loggedIn successfully!!");
         } catch (error) {
           toast.error(getErrorFromResponseData(error));
-          console.log(error);
         } finally {
           setSubmitting(false);
         }

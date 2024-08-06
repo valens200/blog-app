@@ -11,6 +11,9 @@ export const getErrorFromResponse = (error: any): string => {
 
 export const getErrorFromResponseData = (error: any): string => {
   if (!error.response) return "Network Error";
+  if (error.response.data.data) {
+    return error.response.data.data;
+  }
   return error.response.data.message;
 };
 

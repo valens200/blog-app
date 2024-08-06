@@ -28,6 +28,7 @@ public class Post extends InitiatorAudit  implements Comparable{
     @ManyToOne
     @JoinColumn(name = "author_id")
     private Profile author;
+
     @OneToMany(mappedBy = "post", fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     private List<Comment> comments;
 

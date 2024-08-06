@@ -39,17 +39,15 @@ export const RegisterForm: React.FC<Props> = () => {
         try {
           setSubmitting(true);
           setTimeout(() => {}, 1000);
-          const response = await api.post("/users/create", {
+          await api.post("/users/create", {
             email: values.email,
             password: values.password,
             userName: values.username,
           });
-          console.log(response);
           navigate("/");
           toast.success("The accoung was successfully created! please login.");
         } catch (error) {
           toast.error(getErrorFromResponseData(error));
-          console.log(error);
         } finally {
           setSubmitting(false);
         }
@@ -98,7 +96,7 @@ export const RegisterForm: React.FC<Props> = () => {
           <Button type="submit" disabled={isSubmitting}>
             Create account
           </Button>
-          <Link to={"/login"}>
+          <Link to={"/"}>
             Already a member? <span>Login</span>
           </Link>
         </Form>
