@@ -15,12 +15,12 @@ import java.util.List;
 @SpringBootApplication
 @RequiredArgsConstructor
 @EnableCors
-public class Main extends SpringBootServletInitializer {
+public class SpringBootMainApp extends SpringBootServletInitializer {
 	private final IRoleRepository roleRepository;
 
 
 	public static void main(String[] args) {
-		SpringApplication.run(Main.class, args);
+		SpringApplication.run(SpringBootMainApp.class, args);
 	}
 	@Bean
 	public void  initializeRoles(){

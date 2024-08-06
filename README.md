@@ -40,13 +40,24 @@ This is a simple blog application developed using React for the frontend and Spr
 
 ### Backend
 
+### Using Docker
+
+If you don't have either javascript or java environment, please build both
+
+```sh
+docker build -t <image_name> .
+docker run -p <desired port>:<desired port> <image_name>
+```
+
+- You can also run it locally with the following steps if you don't prefer Docker.
+
 1. Clone the repository:
    ```sh
    git clone https://github.com/valens200/blog-app
    ```
 2. Navigate to the backend directory:
    ```sh
-   cd backend
+   cd server
    ```
 3. Install dependencies:
    ```sh
@@ -57,7 +68,7 @@ This is a simple blog application developed using React for the frontend and Spr
 
 1. Navigate to the frontend directory:
    ```sh
-   cd frontend
+   cd client
    ```
 2. Install dependencies:
    ```sh
