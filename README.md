@@ -13,7 +13,9 @@ This is a simple blog application developed using React for the frontend and Spr
 7. [Running the Application](#running-the-application)
 8. [API Endpoints](#api-endpoints)
 9. [Authentication Process](#authentication-process)
-10. [Project Structure](#project-structure)
+10. [User manual](#user-manual)
+11. [Project structure](#project-structure)
+    d
 
 ## Features
 
@@ -220,7 +222,7 @@ CREATE TABLE users (
 1. **Registration**: Users can register by sending a POST request to `/api/auth/register` with their username, email and password.
 2. **Login**: Users can login by sending a POST request to `/api/auth/login` with their email and password. A JWT token will be returned, which should be included in the `Authorization` header for subsequent requests.
 
-## Some user interface pages
+## User manual
 
 ### Authentication
 
