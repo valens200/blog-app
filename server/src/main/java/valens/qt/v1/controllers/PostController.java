@@ -6,6 +6,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import valens.qt.v1.dtos.requests.CreatePostDTO;
 import valens.qt.v1.models.Post;
@@ -107,6 +108,7 @@ public class PostController extends Controller{
      * @return ResponseEntity containing ApiResponse with the list of all posts.
      */
     @GetMapping("all")
+    @PreAuthorize("hasAnyAuthority('USER','ADMIN')")
     public ResponseEntity<ApiResponse> getAll() {
         try {
             return ResponseEntity.ok(new ApiResponse(true, "All posts were retrieved successfully", postService.getAll()));
