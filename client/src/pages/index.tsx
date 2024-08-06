@@ -21,15 +21,6 @@ export function IndexPage() {
 
   const [posts, setPosts]: any[] = useState([]);
 
-  const getPosts = async () => {
-    try {
-      const response = await authApi.get("/posts/all");
-      console.log(response);
-      setPosts(response.data.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
   useSWR(`/posts/all`, async (url) => {
     try {
       const response = await authApi.get(url);

@@ -14,6 +14,7 @@ import { AuthProvider } from "./hooks/useAuth";
 import { Toaster } from "react-hot-toast";
 import { createTheme, MantineProvider } from "@mantine/core";
 import { ConfirmModal } from "./components/modals/ConfirmModal";
+import NotFoundPage from "./pages/NotFoundPage";
 
 const theme = createTheme({});
 ReactDOM.createRoot(document.getElementById("root")!).render(
@@ -29,7 +30,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
             <Route path="/admin/new-post" element={<AddPost />} />
             <Route path="/admin/p/:id/edit" element={<EditPost />} />
             <Route path="/p/:id" element={<PostDetail />} />
-            <Route path="*" element={<Login />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
           <Toaster />
           <ConfirmModal />
