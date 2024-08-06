@@ -9,8 +9,11 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import valens.qt.v1.dtos.requests.CreatePostDTO;
 import valens.qt.v1.models.Post;
+import valens.qt.v1.models.Profile;
+import valens.qt.v1.models.User;
 import valens.qt.v1.payload.ApiResponse;
 import valens.qt.v1.services.IPostService;
+import valens.qt.v1.services.IUserService;
 import valens.qt.v1.utils.Constants;
 import valens.qt.v1.utils.ExceptionsUtils;
 
@@ -23,6 +26,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class PostController  extends Controller{
     private final IPostService postService;
+    private final IUserService userService;
 
     @PostMapping("create")
     public ResponseEntity<ApiResponse> createPost(@RequestBody CreatePostDTO postDTO) {
@@ -105,6 +109,10 @@ public class PostController  extends Controller{
     public ResponseEntity<ApiResponse> getById(@PathVariable("postId") UUID postId) {
         try {
             Post post =  this.postService.getById(postId);
+            Profile user = userService.getLoggedInUser();
+            if(post.getAuthor().equals(user)){
+                post.setIsOwner("T");
+            }
             Collections.sort(post.getComments());
             return ResponseEntity.ok(new ApiResponse(true,"The post was retrieved successfully",post));
         }catch (Exception exception){

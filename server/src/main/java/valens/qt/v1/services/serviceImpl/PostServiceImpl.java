@@ -99,13 +99,13 @@ public class PostServiceImpl extends ServiceImpl implements IPostService {
             Collections.sort(posts);
             for(Post post : posts){
                 if(post.getAuthor() == null){
-                    post.setOwner(true);
+                    post.setIsOwner("T");
                     continue;
                 }
                 if( post.getAuthor().equals(user)){
-                    post.setOwner(true);
+                    post.setIsOwner("T");
                 }else{
-                    post.setOwner(true);
+                    post.setIsOwner("T");
                 }
             }
             return posts;

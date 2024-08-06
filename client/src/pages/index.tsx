@@ -14,8 +14,6 @@ import useSWR from "swr";
 export function IndexPage() {
   const [posts, setPosts]: any[] = useState([]);
 
-  authentiCate();
-
   const getPosts = async () => {
     try {
       const response = await authApi.get("/posts/all");
@@ -34,6 +32,8 @@ export function IndexPage() {
     }
   });
   const navigate = useNavigate();
+  authentiCate();
+
   return (
     <MainLayout>
       <main>
@@ -52,7 +52,11 @@ export function IndexPage() {
               <h2 className="text-2xl hover:underline cursor-pointer font-bold text-balance max-w-">
                 {posts[0].title}
               </h2>
-              <p>{posts[0].content}</p>
+              <p>
+                {posts[0].content.length > 500
+                  ? posts[0].content.slice(0, 500) + " .........."
+                  : posts[0].content}
+              </p>
               <div className="flex gap-2">
                 <div>
                   <h2>By</h2>

@@ -46,7 +46,11 @@ export const FeaturedPosts: React.FC<any> = ({ posts }) => {
               <h2 className="text-lg font-bold text-balance max-w-">
                 {post.title}
               </h2>
-              <p className="text-sm">{post.content}</p>
+              <p className="text-sm">
+                {post.content.length > 300
+                  ? post.content.slice(0, 300) + ".........."
+                  : post.content}
+              </p>
               <div className="flex gap-3">
                 <p>
                   {post.author != null ? post.author.userName : "No author"}

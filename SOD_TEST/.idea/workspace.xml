@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f2be5a88-8cca-4576-b38e-0c0f8635d706" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.github/workflows/deployment.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/ServletInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/annotations/EnableCors.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/annotations/ValidPassword.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/annotations/validators/PasswordConstraintValidator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/audits/InitiatorAudit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/audits/TimeStampAudit.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/config/CorsConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/config/HttpConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/config/SwaggerApiDoc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/config/WebConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/controllers/AuthenticationController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/controllers/CommentController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/controllers/Controller.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/controllers/PostController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/controllers/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/dtos/requests/CreateBlogDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/dtos/requests/CreateCommentDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/dtos/requests/CreatePostDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/dtos/requests/CreateUserDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/dtos/requests/LoginDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/dtos/requests/ResetPasswordDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/dtos/requests/UserTypesDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/dtos/response/CustomAutError.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/dtos/response/ErrorResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/dtos/response/LoginResponseDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/dtos/response/Response.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/exceptions/BadRequestException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/exceptions/ForbiddenException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/exceptions/InternalServerErrorException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/exceptions/InvalidUUIdException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/exceptions/JWTVerificationException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/exceptions/NotFoundException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/exceptions/TokenException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/exceptions/UnauthorizedException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/models/Comment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/models/Notification.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/models/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/models/Post.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/models/Profile.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/models/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/models/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/models/enums/EAccountStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/models/enums/EGender.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/models/enums/ERole.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/models/enums/EVisibility.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/models/enums/ResponseType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/payload/ApiResponse.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/repositories/ICommentRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/repositories/IPostRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/repositories/IProfileRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/repositories/IRoleRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/repositories/IUserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/security/User/UserAuthority.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/security/User/UserSecurityDetails.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/security/User/UserSecurityDetailsService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/security/jwt/JWTAuthFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/security/jwt/JwtUserInfo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/security/jwt/JwtUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/services/AuthenticationService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/services/IAuthService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/services/ICommentService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/services/IFileService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/services/IPostService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/services/IRoleService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/services/IUserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/services/MailService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/services/serviceImpl/AuthServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/services/serviceImpl/AuthenticationServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/services/serviceImpl/CommentServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/services/serviceImpl/FileServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/services/serviceImpl/PostServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/services/serviceImpl/RoleServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/services/serviceImpl/ServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/services/serviceImpl/UserServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/services/serviceImpl/pactchProcessing/FileExporter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/services/serviceImpl/pactchProcessing/FileImporter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/utils/Constants.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/utils/ExceptionsUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/utils/Hash.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/utils/Mail.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/utils/Mapper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/utils/SecurityUtils.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/utils/Utility.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/utils/helpers/Helper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/valens/qt/v1/utils/helpers/Validator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/save-withdraw.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/valens/qt/v1/MainTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/.eslintrc.cjs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/components.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/postcss.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/public/logo-lg.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/public/logo.svg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/assets/AI-DarkMode-2-1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/assets/image2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/components/Footer.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/components/Header.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/components/HeaderController.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/components/auth/LoginForm.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/components/auth/RegisterForm.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/components/comments/Comment.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/components/comments/CommentSection.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/components/comments/CommentSectionInput.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/components/data/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/components/home/FeaturedPosts.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/components/home/LatestPosts.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/components/home/PopularPosts.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/components/layouts/MainLayout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/components/layouts/ModalLayout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/components/modals/ConfirmModal.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/components/modals/EditModal.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/components/modals/LogoutModal.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/components/posts/AddPost.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/components/posts/CreatePostForm.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/components/posts/EditPostForm.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/components/ui/Modal.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/components/ui/button.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/components/ui/input.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/components/ui/navigation-menu.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/components/ui/padding.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/components/ui/textarea.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/hooks/use-scroll.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/hooks/useAuth.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/lib/utils.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/main.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/pages/404.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/pages/add-post.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/pages/edit-post.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/pages/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/pages/login.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/pages/post-detail.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/pages/register.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/routes.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/styles/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/types/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/utils/api/constants/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/utils/functions/function.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/src/vite-env.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/tailwind.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/tsconfig.app.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/tsconfig.node.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../blog-site/vite.config.ts" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Enum" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="Use Maven wrapper" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 1
+}</component>
+  <component name="ProjectId" id="2kCYsWyxV8agGAoq5OPpkRZQ7nY" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.Main.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/apple/projects/jobs/qt/qt_global_test/SOD_TEST&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager">
+    <configuration name="Main" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="templates" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="valens.qt.v1.Main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-322ed176" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f2be5a88-8cca-4576-b38e-0c0f8635d706" name="Changes" comment="" />
+      <created>1722789235188</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1722789235188</updated>
+      <workItem from="1722789236829" duration="4815000" />
+      <workItem from="1722837488240" duration="19585000" />
+      <workItem from="1722919282545" duration="160000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

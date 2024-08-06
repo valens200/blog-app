@@ -14,8 +14,8 @@ export const CommentSection: React.FC<CommentSectionProps> = ({
       <h2 className="font-semibold mt-3">{`Comments (${comments.length})`}</h2>
       <CommentSectionInput postId={postId} userId="" />
       <div className="flex flex-col gap-5">
-        {comments.map((comment: any) => (
-          <>
+        {comments.map((comment: any, index: number) => (
+          <div key={index}>
             {comment.visibility == "VISIBLE" && (
               <Comment
                 id={comment.id}
@@ -24,7 +24,7 @@ export const CommentSection: React.FC<CommentSectionProps> = ({
                 createdAt={comment.dateTime}
               />
             )}
-          </>
+          </div>
         ))}
       </div>
     </div>
