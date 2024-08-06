@@ -198,7 +198,8 @@ CREATE TABLE users (
 
 1. Start the React application:
    ```sh
-   npm start
+   npm i
+   npm dev
    ```
 
 ## API Endpoints
@@ -273,4 +274,4 @@ CREATE TABLE users (
 
 ---
 
-This documentation should help you set up and run the application locally. If you encounter any issues, please refer to the project's README or contact the project maintainers.
+This documentation should help you set up and run the application locally. If you encounter any issues, please contact me at valensniyonsenga2003@gmail.com
