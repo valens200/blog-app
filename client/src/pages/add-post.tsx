@@ -6,9 +6,16 @@ import { Button } from "@/components/ui/button";
 import { MainLayout } from "@/components/layouts/MainLayout";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { useEffect } from "react";
+import { authentiCate } from "@/utils/functions/function";
 
 export const AddPost: React.FC = () => {
   const navigate = useNavigate();
+  useEffect(() => {
+    if (!authentiCate()) {
+      navigate("/");
+    }
+  }, []);
 
   const post: any = JSON.parse(localStorage.getItem("post")!);
 

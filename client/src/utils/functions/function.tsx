@@ -19,10 +19,12 @@ export const capitalize = (str: string): string => {
 };
 
 export const authentiCate = () => {
-  const navigate = useNavigate();
-
   const token = localStorage.getItem("token");
-  if (!token) navigate("/");
+  console.log("Token", token);
+  if (!token || token == null) {
+    return false;
+  }
+  return true;
 };
 
 export const getUseRoute = (role: UserRole): string => {

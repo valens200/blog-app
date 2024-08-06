@@ -5,13 +5,20 @@ import { Header } from "@/components/Header";
 import { FeaturedPosts } from "@/components/home/FeaturedPosts";
 import { MainLayout } from "@/components/layouts/MainLayout";
 import { Padding } from "@/components/ui/padding";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { authApi, images } from "@/utils/api/constants";
 import { format } from "date-fns";
 import { authentiCate } from "@/utils/functions/function";
 import useSWR from "swr";
 
 export function IndexPage() {
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!authentiCate()) {
+      navigate("/");
+    }
+  }, []);
+
   const [posts, setPosts]: any[] = useState([]);
 
   const getPosts = async () => {
@@ -31,8 +38,6 @@ export function IndexPage() {
       console.log(error);
     }
   });
-  const navigate = useNavigate();
-  authentiCate();
 
   return (
     <MainLayout>

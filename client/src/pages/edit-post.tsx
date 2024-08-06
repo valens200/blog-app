@@ -3,9 +3,16 @@ import { useNavigate } from "react-router-dom";
 
 import { EditPostForm } from "@/components/posts/EditPostForm";
 import { Button } from "@/components/ui/button";
+import { authentiCate } from "@/utils/functions/function";
+import { useEffect } from "react";
 
 export const EditPost: React.FC = () => {
   const navigate = useNavigate();
+  useEffect(() => {
+    if (!authentiCate()) {
+      navigate("/");
+    }
+  }, []);
 
   return (
     <div className="w-full mx-auto max-w-[856px]">
