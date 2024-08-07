@@ -42,7 +42,7 @@ This is a simple blog application developed using React for the frontend and Spr
 
 ### Using Docker
 
-If you don't have either javascript or java environment, please build both
+If you don't have either javascript or java environment, please use docker to build the app and run it with zero issues
 
 ```sh
 docker build -t <image_name> .
