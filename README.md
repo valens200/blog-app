@@ -100,10 +100,9 @@ docker run -p <desired port>:<desired port> <image_name>
 
 - `src/components`: Contains React components
 - `src/hooks`: Contains custom hooks for the application
-- `src/pages`: Contains page components
+- `src/pages`: Contains pages
 - `src/utils`: Contains utils functions that are reusable accroass pages
-- `src/types`: Contains Typescript function for the application
--
+- `src/types`: Contains Typescript reusable types for the application
 
 ### Backend
 
