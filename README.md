@@ -26,8 +26,8 @@ This is a simple blog application developed using React for the frontend and Spr
 ## Technologies Used
 
 - **Frontend**: React
-- **Backend**: Spring Boot
-- **Database**: MariaDB or PostgreSQL
+- **Backend**: Spring Boot with Spring Data JPA, Spring security, Hibernate..
+- **Database**: PostgreSQL
 
 ## Prerequisites
 
@@ -76,10 +76,6 @@ docker run -p <desired port>:<desired port> <image_name>
    ```
 
 ## Configuration
-
-## Project Structure
-
-### Backend
 
 ## Project Structure
 
