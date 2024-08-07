@@ -282,6 +282,8 @@ CREATE TABLE users (
 
 ####
 
+## Here is a detailed vieo showing all functionalities https://drive.google.com/file/d/1jIH4VThYDQ-qRzLJ4DGlRQ6ISkrmHdEx/view?usp=sharing
+
 ---
 
-This documentation should help you set up and run the application locally. If you encounter any issues, please refer to the project's README or contact the project maintainers.
+This documentation should help you set up and run the application locally. If you encounter any issues, please refer to the project's README or contact me at valensniyonsenga2003@gmail.com.
